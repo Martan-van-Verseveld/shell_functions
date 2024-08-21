@@ -8,15 +8,15 @@ yon() {
     local user_input					# user response
     local prompt_suffix
 
-	# setting the suffix for default response
-	if [ "$default_response" == "y" ]; then
-		prompt_suffix="(Y/n)"
-	elif [ "$default_response" == "n" ]; then
-		prompt_suffix="(y/N)"
-	else
-		echo "Invalid default response. Please use 'y' or 'n'."
-		return 1
-	fi
+    # setting the suffix for default response
+    if [ "$default_response" == "y" ]; then
+        prompt_suffix="(Y/n)"
+    elif [ "$default_response" == "n" ]; then
+        prompt_suffix="(y/N)"
+    else
+        echo "Invalid default response. Please use 'y' or 'n'."
+        return 1
+    fi
 
 	# Prompt the user for input
 	read -p "$prompt $prompt_suffix: " user_input
