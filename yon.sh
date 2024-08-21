@@ -9,9 +9,9 @@ yon() {
     local prompt_suffix
 
     # setting the suffix for default response
-    if [ "$default_response" == "y" ]; then
+    if [ "$default_response" = "y" ]; then
         prompt_suffix="(Y/n)"
-    elif [ "$default_response" == "n" ]; then
+    elif [ "$default_response" = "n" ]; then
         prompt_suffix="(y/N)"
     else
         echo "Invalid default response. Please use 'y' or 'n'."
@@ -25,14 +25,14 @@ yon() {
     user_input=$(echo "$user_input" | tr '[:upper:]' '[:lower:]')
 
     # replace user input with the default response if empty
-    if [[ -z "$user_input" ]]; then
+    if [ -z "$user_input" ]; then
         user_input="$default_response"
     fi
 
     # Check the user input and return the appropriate exit code
-    if [ "$user_input" == "y" ]; then
+    if [ "$user_input" = "y" ]; then
         return 0  # true
-    elif [ "$user_input" == "y" ]; then
+    elif [ "$user_input" = "n" ]; then
         return 1  # false
     else
         return 1  # false
