@@ -3,10 +3,10 @@
 # yes or no prompt
 # usage: `yon {prompt} {default response}`
 yon() {
-	local prompt="$1"					# custom message prompt
-	local default_response="${2:-y}"	# default user response (y/n)
-	local user_input					# user response
-	local prompt_suffix
+    local prompt="$1"					# custom message prompt
+    local default_response="${2:-y}"	# default user response (y/n)
+    local user_input					# user response
+    local prompt_suffix
 
 	# setting the suffix for default response
 	if [ "$default_response" == "y" ]; then
